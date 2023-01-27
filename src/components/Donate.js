@@ -40,10 +40,13 @@ function Donate({lists}){
       }
     return (
       <div className="dona">
+         <center>
+           <h2 className="head1 mt-5 mb-5" >MAKE A DONATION</h2>
+         </center>
         <form onSubmit={handleSubmit}>
           <center>
           <label>
-            charity Name
+            <strong>CHOOSE ORGANISATION: </strong>
             <select
             name="charityname"
             value={newItemFields.charityname}
@@ -53,10 +56,10 @@ function Donate({lists}){
                 <option key={index}>{list.charityName}</option>
               ))}
             </select>
-            </label>
+          </label>
   
             <br></br>
-             <input
+            <input
             name='name'
             type="text"
             onChange={handleFields}
@@ -84,17 +87,17 @@ function Donate({lists}){
             type="number"
             placeholder="Amount your donating..."/>
             <div>
-              <button id='donate' type="submit" class="btn btn-outline-dark">Submit</button>
+              <button id='donate' type="submit" class="btn btn-outline-dark mb-5">Submit</button>
             </div>
           </center>
         </form>
         <div>
-          <center><h2>Donations</h2></center>
+          <center><h5>See below for donations made:</h5></center>
           <table>
             <thead>
               <tr>
-                <th>Charity Name</th>
-                <th>Amount</th>
+                <th>ORGANISATION</th>
+                <th>AMOUNT CONTRIBUTED AS DONATION ($)</th>
               </tr>
               </thead>
               <tbody>

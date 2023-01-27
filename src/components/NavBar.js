@@ -33,11 +33,11 @@ function handleLogin() {
                     <li className="nav-item">
                       <Link className="active me-3 navbar-brand" to="/contact">Contact</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <button className="btn btn-outline-warning" type="submit" >
                         <Link className= "navbar-brand" to="/donate">Donate</Link>
                         </button>
-                    </li>
+                    </li> */}
                     {/* <li class="nav-item">
                       <Link className="active me-3" to="/donate">Donate</Link>
                     </li> */}
@@ -49,6 +49,11 @@ function handleLogin() {
                     </li> */}
                   </ul>
               </div>
+                  <div>
+                    <button className="btn btn-outline-warning" type="submit" >
+                        <Link className= "navbar-brand" to="/donate">Donate</Link>
+                    </button>
+                  </div>
                   <div className="authorization">
                         <button id="Sign-btn" className="btn btn-outline-info ms-2" type="button">
                         <Link className="active me-3 navbar-brand" to="/signup">Sign Up</Link>
