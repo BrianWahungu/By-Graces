@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/footer';
 import React, { useState,useEffect } from "react";
 import Donate from './components/Donate';
+// import { list } from './components/List';
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
                  handleSearchLoc={handleSearchLoc} />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/contact' element={<Contact />}></Route>
-                <Route path='/donate' element={<Donate/>}></Route>
+                <Route path='/donate' element={<Donate lists={lists}/>}></Route>
                 {/* <Route path='/sign up' element={<SignUp/>}></Route> */}
                 <Route path='/login' element={<Authentication/>}></Route>
               </Routes>

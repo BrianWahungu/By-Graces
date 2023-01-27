@@ -1,37 +1,24 @@
 .main-footer{
     width: 100%;
     bottom: 0;
+    margin-top: 20px;
     /* background: rgb(38, 180, 38); */
-    background-color: #FCAA19;
-    color: white;
+    /* background-color: #FCAA19; */
+    background-image: linear-gradient(white, #FCAA19);
+    color: black;
     padding: .25em 0;
-}
-.main-footer p{
-    text-align: center;
-    color: white;
-    font-style: italic;
-    font-family: 'Sevillana',cursive;
-    font-weight: 700;
-}
-.main-footer-container{
-    display: flex;
-    align-items: center;
-}
-.main-footer-container ul{
-    flex-grow: 1;
-    text-align: end;
-}
-.footer-nav li{
-    padding: 0 .5em;
 }
 .footer-nav img{
     width: 30px;
     height: 30px;
 }
-
-
-
-
-
-
-
+#p-f {
+    color: black;
+    font-size: 12px;
+}
+h3 {
+    font-size: 18px;
+}
+#est {
+    font-size: 10px;
+}
