@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './mt.css';
 function Authentication() {
   const [formData, setFormData] = useState({
     username: "",
@@ -19,6 +20,7 @@ function Authentication() {
     }
   return (
     <div>
+      <div className="img-y">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
@@ -50,6 +52,7 @@ function Authentication() {
         />
         <button type="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
 }

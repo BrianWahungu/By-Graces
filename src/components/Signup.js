@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
+import './signup.css'
 function Signup(){
    const [formData, setFormData] = useState({
     firstname: "",
@@ -22,8 +23,10 @@ function Signup(){
     }
     return (
         <div>
+            <div className="img-t">
           <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
+      <center>
       <label htmlFor="firstname">FirstName</label>
         <input
           type="text"
@@ -51,6 +54,7 @@ function Signup(){
           onChange={handleChange}
           value={formData.username}
         />
+        <br />
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -78,9 +82,12 @@ function Signup(){
           onChange={handleChange}
           value={formData.confirmpassword}
         />
+        <br/>
         <button type="submit">Submit</button>
+        </center>
       </form>
+      </div>
         </div>
     )
 }
-export default Signup
+export default Signup;
