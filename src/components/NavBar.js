@@ -1,8 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 // import './navbar.css'
 import { Link, useNavigate } from "react-router-dom";
- function NavBar(){
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+ function NavBar({isLoggedIn, setIsLoggedIn}){
 let navigate = useNavigate();
 function handleLogout() {
 setIsLoggedIn(false);
@@ -55,9 +54,11 @@ function handleLogin() {
                     </button>
                   </div>
                   <div className="authorization">
+                    {isLoggedIn? null :(
                         <button id="Sign-btn" className="btn btn-outline-info ms-2" type="button">
                         <Link className="active me-3 navbar-brand" to="/signup">Sign Up</Link>
                         </button>
+                        )}
                         {isLoggedIn ? (
                          <button id="login-btn"
                          className="btn btn-outline-primary ms-2"
