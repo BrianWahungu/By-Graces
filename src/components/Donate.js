@@ -1,8 +1,17 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import './Donate';
-import { list, getNextId } from './List'
+import { getNextId } from './List'
+
+
 function Donate({lists}){
-  const [todos, setTodos] = useState(list);  
+  const [todos, setTodos] = useState(
+    () => JSON.parse(localStorage.getItem("todos")) || []
+   ); 
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+}, [todos])
+
   const [newItemFields, setNewItemFields]=useState({
         charityname:'',
         email:'',
@@ -51,7 +60,8 @@ function Donate({lists}){
             name="charityname"
             value={newItemFields.charityname}
             placeholder="Charity Name"
-            onChange={handleFields}>
+            onChange={handleFields}
+            required>
               {lists.map((list,index)=>(
                 <option key={index}>{list.charityName}</option>
               ))}
@@ -84,10 +94,11 @@ function Donate({lists}){
             name="amount"
             value={newItemFields.amount}
             onChange={handleFields}
+            required
             type="number"
             placeholder="Amount your donating..."/>
             <div>
-              <button id='donate' type="submit" class="btn btn-outline-dark mb-5">Submit</button>
+              <button id='donate' type="submit" className="btn btn-outline-dark mb-5">Submit</button>
             </div>
           </center>
         </form>
@@ -101,8 +112,8 @@ function Donate({lists}){
               </tr>
               </thead>
               <tbody>
-              {todos.map((todo)=>{
-           return <tr key={todo.id}>
+              {todos.map((todo,index)=>{
+           return <tr key={index}>
             <td>{todo.charityName}</td>
             <td>{todo.Amount}</td>
             </tr> })}

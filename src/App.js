@@ -10,7 +10,7 @@ import Footer from './components/footer';
 import React, { useState,useEffect } from "react";
 import Donate from './components/Donate';
 import Signup from './components/Signup';
-
+import MediaQuery from 'react-responsive';
 
 function App() {
   const [lists,setlist]=useState([])
@@ -48,11 +48,17 @@ function App() {
             setIsLoggedIn={setIsLoggedIn}/>
               <Routes>
                 <Route path='/' element={<Home />}></Route>
-                <Route path='/organiztion' element={<OrganizationList 
+                <Route path='/organiztion' element={
+                <MediaQuery minWidth={500}>
+                <OrganizationList 
                 lists={lists}
                  handleSearchCat={handleSearchCat}
-                 handleSearchLoc={handleSearchLoc} />}></Route>
-                <Route path='/about' element={<About />}></Route>
+                 handleSearchLoc={handleSearchLoc} />
+                 </MediaQuery>}></Route>
+                <Route path='/about' element={
+                  <MediaQuery minWidth={500}>
+                <About />
+                </MediaQuery>}></Route>
                 <Route path='/contact' element={<Contact />}></Route>
                 <Route path='/donate' element={<Donate lists={lists}/>}></Route>
                 <Route path='/signup' element={<Signup 
