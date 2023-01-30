@@ -50,7 +50,7 @@ function Authentication() {
           onChange={handleChange}
           value={formData.password}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-outline-warning">Submit</button>
       </form>
       </div>
     </div>

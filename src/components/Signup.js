@@ -84,7 +84,7 @@ function Signup({setIsLoggedIn}){
           value={formData.confirmpassword}
         />
         <br/>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-outline-warning">Submit</button>
         </center>
       </form>
       </div>
